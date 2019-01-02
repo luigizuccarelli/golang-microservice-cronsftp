@@ -131,7 +131,7 @@ func ValidateJson(cfg Config) (Config, error) {
 			cfg.MongoDB.Host = os.Getenv("MONGODB_HOST")
 		}
 		if os.Getenv("MONGODB_PORT") != "" {
-			cfg.MongoDB.Host = os.Getenv("MONGODB_PORT")
+			cfg.MongoDB.Port = os.Getenv("MONGODB_PORT")
 		}
 	}
 
@@ -142,7 +142,7 @@ func ValidateJson(cfg Config) (Config, error) {
 	} else {
 		// override if we have envars set
 		if os.Getenv("CRON") != "" {
-			cfg.MongoDB.Host = os.Getenv("CRON")
+			cfg.Cron = os.Getenv("CRON")
 		}
 	}
 
